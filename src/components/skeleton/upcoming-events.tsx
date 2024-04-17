@@ -1,4 +1,4 @@
-import { Badge, List, Skeleton } from "antd";
+import { Badge, Skeleton, List } from "antd";
 
 const UpcomingEventsSkeleton = () => {
   return (
