@@ -1,4 +1,4 @@
-import { DashboardTotalCountCard, DealsChart, UpcomingEvents } from "@/components"
+import { DashboardLatestActivities, DashboardTotalCountCard, DealsChart, UpcomingEvents } from "@/components"
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "@/graphql/queries"
 import { DashboardTotalCountsQuery } from "@/graphql/types"
 import { useCustom } from "@refinedev/core"
@@ -20,36 +20,36 @@ export const Home = () => {
           marginTop: '32px'
         }}
       >
-          <Col
-            xs={24}
-            sm={24}
-            xl={8}
-          >
-            <DashboardTotalCountCard 
-              resource="companies"
-              isLoading={isLoading}
-              totalCount={data?.data.companies.totalCount}
-            />
-          </Col>
-          <Col
-            xs={24}
-            sm={24}
-            xl={8}
-          ><DashboardTotalCountCard 
-            resource="contacts"
+        <Col
+          xs={24}
+          sm={24}
+          xl={8}
+        >
+          <DashboardTotalCountCard 
+            resource="companies"
             isLoading={isLoading}
-            totalCount={data?.data.contacts.totalCount}
-          /></Col>
-          <Col
-            xs={24}
-            sm={24}
-            xl={8}
-          ><DashboardTotalCountCard 
-            resource="deals"
-            isLoading={isLoading}
-            totalCount={data?.data.deals.totalCount}
-          /></Col>
-        </Row>
+            totalCount={data?.data.companies.totalCount}
+          />
+        </Col>
+        <Col
+          xs={24}
+          sm={24}
+          xl={8}
+        ><DashboardTotalCountCard 
+          resource="contacts"
+          isLoading={isLoading}
+          totalCount={data?.data.contacts.totalCount}
+        /></Col>
+        <Col
+          xs={24}
+          sm={24}
+          xl={8}
+        ><DashboardTotalCountCard 
+          resource="deals"
+          isLoading={isLoading}
+          totalCount={data?.data.deals.totalCount}
+        /></Col>
+      </Row>
       <Row
         gutter={[32, 32]}
         style={{
@@ -75,6 +75,18 @@ export const Home = () => {
           }}
         >
           <DealsChart />
+        </Col>
+      </Row>
+      <Row
+        gutter={[32, 32]}
+        style={{
+          marginTop: '32px'
+        }}
+      >
+        <Col
+          xs={24}
+        >
+          <DashboardLatestActivities />
         </Col>
       </Row>
     </div>
